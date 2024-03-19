@@ -1,6 +1,9 @@
-
+import { Suspense } from "react";
 import "./globals.css";
 import NavbarComponent from "@/components/navbar/NavbarComponent";
+import Loading from "./loading";
+import Error from "./error";
+import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 
 export default function RootLayout({
 	children,
@@ -13,7 +16,9 @@ export default function RootLayout({
 				<header>
 					<NavbarComponent />
 				</header>
-				{children}
+				<ErrorBoundary errorComponent={Error}>
+					<Suspense fallback={<Loading />}>{children}</Suspense>
+				</ErrorBoundary>
 			</body>
 		</html>
 	);

@@ -22,23 +22,23 @@ export default function NavbarComponent() {
 	const [menu, setMenu] = useState<MenuItem[]>(MenuList);
 	console.log(pathname);
 
-	const updateMenu = (path: string) => {
-		const newMenu = menu.map((item) => {
-			if(path=== item.path){
-				return {
-					...item,
-					active: true
-				}
-			}else{
-				return {
-					...item,
-					active: false
-				}
-			}
-		})
+	// const updateMenu = (path: string) => {
+	// 	const newMenu = menu.map((item) => {
+	// 		if(path=== item.path){
+	// 			return {
+	// 				...item,
+	// 				active: true
+	// 			}
+	// 		}else{
+	// 			return {
+	// 				...item,
+	// 				active: false
+	// 			}
+	// 		}
+	// 	})
 
-		setMenu(newMenu)
-	}
+	// 	setMenu(newMenu)
+	// }
 
 	return (
 		<Navbar fluid rounded className="w-full">
@@ -55,7 +55,7 @@ export default function NavbarComponent() {
 			<NavbarToggle />
 			<NavbarCollapse>
 				{menu.map((item, index) => (
-					<NavbarLink onClick={()=>updateMenu(item.path)}  as={Link} href={item.path} active={item.active}>
+					<NavbarLink   as={Link} href={item.path} active={item.path === pathname}>
 						{item.name}
 					</NavbarLink>
 				))}
