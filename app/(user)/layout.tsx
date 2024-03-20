@@ -1,5 +1,5 @@
 import { Suspense } from "react";
-import "./globals.css";
+import "@/app/globals.css";
 import NavbarComponent from "@/components/navbar/NavbarComponent";
 import Loading from "./loading";
 import Error from "./error";

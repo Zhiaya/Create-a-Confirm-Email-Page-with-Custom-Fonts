@@ -20,7 +20,6 @@ type MenuItem = {
 export default function NavbarComponent() {
 	const pathname = usePathname();
 	const [menu, setMenu] = useState<MenuItem[]>(MenuList);
-	console.log(pathname);
 
 	// const updateMenu = (path: string) => {
 	// 	const newMenu = menu.map((item) => {
@@ -55,7 +54,11 @@ export default function NavbarComponent() {
 			<NavbarToggle />
 			<NavbarCollapse>
 				{menu.map((item, index) => (
-					<NavbarLink   as={Link} href={item.path} active={item.path === pathname}>
+					<NavbarLink
+						as={Link}
+						href={item.path}
+						active={item.path === pathname}
+					>
 						{item.name}
 					</NavbarLink>
 				))}
