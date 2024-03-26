@@ -5,6 +5,8 @@ import Loading from "./loading";
 import Error from "./error";
 import { ErrorBoundary } from "next/dist/client/components/error-boundary";
 
+import { inter, suwannaphum, localCustomFont } from "./fonts";
+
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -12,7 +14,9 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className="h-screen flex flex-col">
+			<body
+				className={`${suwannaphum.variable} ${inter.variable} ${localCustomFont.variable} h-screen flex flex-col`}
+			>
 				<header>
 					<NavbarComponent />
 				</header>
