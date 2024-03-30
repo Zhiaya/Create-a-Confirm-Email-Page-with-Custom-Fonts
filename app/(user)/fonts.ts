@@ -4,7 +4,7 @@ import localFont from "next/font/local"
 export const localCustomFont = localFont({
     src: "./fonts/HOLIDAY SUNRISE ITALIC.ttf",
     display: "swap",
-    variable: "--HOLIDAY SUNRISE ITALIC",
+    variable: "--HOLIDAY-SUNRISE-ITALIC",
 })
 
 export const inter = Inter({
